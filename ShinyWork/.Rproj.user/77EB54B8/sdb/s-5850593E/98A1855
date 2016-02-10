@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(quantmod)\nlibrary(ggplot2)\nlibrary(gridExtra)\nmastring<-c(\"addEMA(n=5)\",\"addEMA(n=20)\",\"addEMA(n=60)\")\ntastring<-c(\"addMACD()\",\"addWPR()\",\"addRSI()\")\nshinyServer(function(input, output) {\n  ta<-reactive({\n    baseta<-\"addVo()\"\n    ma<-paste(mastring[as.numeric(input$ma)],collapse=\";\")\n    baseta<-paste(baseta,ma,sep=\";\")\n    baseta<-paste0(tastring[as.numeric(input$ta)],\";\",baseta)\n  })\n  datainput<-reactive({\n    symbol_env <- new.env()\n    stock <- require_symbol(input$ID_text,input$dates[1],input$dates[2],symbol_env)\n  })\n  output$Plot <- renderPlot({\n    \n    chartSeries(datainput(),theme=\"white\",type =\"candlesticks\", TA=ta()) \n    \n  })\n\n})\n\nrequire_symbol <- function(symbol,start,end,envir = parent.frame()) {\n  if (is.null(envir[[symbol]])) {\n    envir[[symbol]] <- getSymbols(symbol,from =start,to =end,auto.assign = FALSE)\n  }\n  \n  envir[[symbol]]\n}\n\n",
+    "created" : 1454750921630.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2350359682",
+    "id" : "98A1855",
+    "lastKnownWriteTime" : 1454945486,
+    "path" : "~/ShinyWork/ShinyWork/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

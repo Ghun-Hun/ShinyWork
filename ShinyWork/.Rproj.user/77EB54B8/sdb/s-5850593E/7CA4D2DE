@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(quantmod)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"Stock Trend Chart\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      textInput(\"ID_text\", \n                label = h4(\"Stock Symbol\"), \n                value = \"AAPL\"),\n      helpText(\"You can find symbol in yahoo finance.\"),\n      dateRangeInput(\"dates\", \n                     label = h4(\"Date range\"),\n                     start=\"2010-01-01\",\n                     end=\"2012-01-01\"),\n      helpText(\"Select date range for you demand.\"),\n      checkboxGroupInput(\"ma\", label = h4(\"Moving Average Line \"), \n                         choices = list(\"5 day\" = 1, \"20 day\" = 2, \"60 day\" = 3),\n                         selected = 1),\n      selectInput(\"ta\", label = h4(\"Indicator\"), \n                  choices = list(\"MACD\" = 1, \"WMI\" = 2, \"RSI\" = 3), \n                  selected = 1),\n      helpText(\"Select indicator for you demand\"),\n      width=3\n     \n    ),\n\n    # Show a plot of the generated distribution\n    mainPanel(\n      tabsetPanel(\n        tabPanel(\n          \"plot\",plotOutput(\"Plot\",, width = \"100%\", height = \"500px\")\n        )\n        tabPanel(\n          \"Docum\"\n        )\n      ),\n      width = 9\n    )\n  )\n))\n",
+    "created" : 1454750921235.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3601690213",
+    "id" : "7CA4D2DE",
+    "lastKnownWriteTime" : 1455119700,
+    "path" : "~/ShinyWork/ShinyWork/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
