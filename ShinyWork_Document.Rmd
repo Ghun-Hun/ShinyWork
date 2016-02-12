@@ -121,3 +121,11 @@ require_symbol <- function(symbol,start,end,envir = parent.frame()) {
 This example show Apple Inc. stock trend from 2010/1/1 to 2012/1/1 with 5 day EMA and MACD indictor.
 
 ![alt image](example.png)
+
+##Homework deploy path
+ 
+  - [Shinyapp Path](https://ghl0506.shinyapps.io/ShinyWork/)
+
+  - [Github path](https://github.com/Ghun-Hun/ShinyWork)
+
+  - [Presentation Path](http://rpubs.com/ghl0506/shinyapp)

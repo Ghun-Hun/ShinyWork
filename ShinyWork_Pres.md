@@ -12,6 +12,14 @@ Summary
 
 This is homework for Developing Data Products lesson. I created a Shiny application and deploy it on Rstudio's servers.This Shiny application can show stock trend and technology indicator with the quantmod package.The stock data come from yahoo finance.You can find the stock symbol from [yahoo finance](http://finance.yahoo.com/stock-center/),and key in stock symbol finance field.The shiny application will show you stock trend chart.Then you can select the indicator for you want. I think this shiny application is easy to use. I hope you will like it.
 
+ **Homework deploy path**
+ 
+  -[Shinyapp Path](https://ghl0506.shinyapps.io/ShinyWork/)
+
+  -[Github path](https://github.com/Ghun-Hun/ShinyWork)
+
+  -[Presentation Path](http://rpubs.com/ghl0506/shinyapp)
+
 Design - Layout
 ========================================================
 left: 70%

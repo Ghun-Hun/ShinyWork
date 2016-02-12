@@ -48,8 +48,8 @@ shinyUI(fluidPage(
           "plot",plotOutput("Plot",, width = "100%", height = "500px")
         ),
         # show support document
-        tabPanel(
-          "Document"
+        tabPanel("Document",
+          includeHTML("ShinyWork_Document.html")
         )
       ),
       # set sidebar layout size
